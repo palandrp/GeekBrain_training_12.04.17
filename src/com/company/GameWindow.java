@@ -14,6 +14,8 @@ public class GameWindow extends JFrame {
     private static Image background;
     private static Image game_over;
     private static Image drop;
+    private static Image renew;
+    private static Image close;
     private static float drop_left = 200;
     private static float drop_top = -100;
     private static float drop_v = 200;
@@ -23,6 +25,8 @@ public class GameWindow extends JFrame {
         background = ImageIO.read(GameWindow.class.getResourceAsStream("background.png"));
         game_over = ImageIO.read(GameWindow.class.getResourceAsStream("game over.png"));
         drop = ImageIO.read(GameWindow.class.getResourceAsStream("drop.png"));
+        renew = ImageIO.read(GameWindow.class.getResourceAsStream("renew.png"));
+        close = ImageIO.read(GameWindow.class.getResourceAsStream("close.png"));
         game_window = new GameWindow();
         game_window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         game_window.setLocation(200, 100);
@@ -62,6 +66,8 @@ public class GameWindow extends JFrame {
         g.drawImage(drop, (int) drop_left, (int) drop_top, 77, 111, null);
         if (drop_top > game_window.getHeight()) {
             g.drawImage(game_over, 190, 100, null);
+            g.drawImage(renew, 50, 300, null);
+            g.drawImage(close, 750, 300, null);
         }
     }
 
